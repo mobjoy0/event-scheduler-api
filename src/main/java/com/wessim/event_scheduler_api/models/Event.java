@@ -21,6 +21,9 @@ public class Event {
     @NotNull(message = "Datetime cannot be null")
     private LocalDateTime datetime;
 
+    @Column(nullable = false, columnDefinition = "BOOLEAN DEFAULT FALSE")
+    private boolean notified = false;
+
     public Long getId() {
         return id;
     }
@@ -51,5 +54,13 @@ public class Event {
 
     public void setDatetime(LocalDateTime datetime) {
         this.datetime = datetime;
+    }
+
+    public void setNotified(boolean notified) {
+        this.notified = notified;
+    }
+
+    public boolean isNotified() {
+        return notified;
     }
 }

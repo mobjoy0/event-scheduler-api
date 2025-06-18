@@ -7,5 +7,5 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public interface EventRepository extends JpaRepository<Event, Long> {
-    List<Event> findByDatetimeBetween(LocalDateTime from, LocalDateTime to);
+    List<Event> findByDatetimeBetweenAndNotified(LocalDateTime from, LocalDateTime to, boolean notified);
 }
